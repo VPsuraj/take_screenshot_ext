@@ -1,0 +1,37 @@
+{
+    "name": "Take screenshot",
+    "version": "1.0.0",
+    "description": "For Client website",
+    "manifest_version": 3,
+    "author": "ValuePitch Developers",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["content.js"],
+        "all_frames": false
+      }
+    ],
+    "host_permissions": ["<all_urls>"],
+    "permissions": [
+      "webNavigation",
+      "webRequest",
+      "activeTab",
+      "scripting",
+      "history",
+      "storage",
+      "tabs",
+      "clipboardWrite"
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_title": "Take screenshot"
+    },
+    "icons": {
+        "48": "/screenshot.png"
+      }
+    
+  }
+  
